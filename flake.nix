@@ -37,7 +37,7 @@
               "rust-src"
             ];
             targets = [
-              "riscv32imac-unknown-none-elf"
+              "riscv32imc-unknown-none-elf"
             ];
           }
         );
@@ -53,6 +53,8 @@
 
         devShells.default = craneLib.devShell {
           packages = [
+            pkgs.esp-generate
+            pkgs.espflash
             pkgs.probe-rs-tools
           ];
         };
