@@ -5,14 +5,11 @@ version = "0.1.0"
 
 [dependencies]
 critical-section = "1.2.0"
-esp-backtrace = { version = "0.18.0", features = [
-  "esp32c3",
-  "panic-handler",
-  "println",
-] }
+defmt = "1"
 esp-bootloader-esp-idf = { version = "0.3.0", features = ["esp32c3"] }
-esp-hal = { version = "1.0.0", features = ["esp32c3", "log-04"] }
-esp-println = { version = "0.16.0", features = ["esp32c3", "log-04"] }
+esp-hal = { version = "1.0.0", features = ["defmt", "esp32c3", "unstable"] }
+panic-rtt-target = { version = "0.2.0", features = ["defmt"] }
+rtt-target = { version = "0.6.1", features = ["defmt"] }
 
 [profile.dev]
 # Rust debug is too slow.

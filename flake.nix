@@ -43,6 +43,7 @@
 
         devShells.default = craneLib.devShell {
           packages = [
+            pkgs.esptool
             pkgs.esp-generate
             pkgs.espflash
             pkgs.probe-rs-tools
